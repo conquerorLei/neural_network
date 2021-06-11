@@ -44,9 +44,8 @@ plt.axis("off")
 plt.imshow(test_x[0], cmap="gray")
 plt.show()
 
-y_test[0]
 model.predict([[X_test[0]]])
-np.argmax(model.predict([[X_test[0]]]))
+np.argmax(model.predict([X_test[0]]))
 
 # 使用模型-测试集中前四个数据
 for i in range(4):

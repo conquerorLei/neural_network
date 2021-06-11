@@ -31,9 +31,9 @@ x0_train = np.ones(num).reshape(-1, 1)
 X = tf.cast(tf.concat([x0_train, x_train], axis=1), tf.float32)  # 将某种数据类型的表达式显式转换为另一种数据类型
 Y = tf.cast(y_train.reshape(-1, 1), tf.float32)
 
-learn_rate = 0.1  # 设置超参数
+learn_rate = 0.005  # 设置超参数
 iter = 120
-display_step = 30
+display_step = 10
 np.random.seed(612)  # 设置模型变量初始值
 W = tf.Variable(np.random.randn(3, 1), dtype=tf.float32)  # 设置图变量
 

@@ -45,8 +45,8 @@ plt.imshow(test_x[0], cmap="gray")
 plt.show()
 
 # 使用模型-测试集中前四个数据
-model.predict([[X_test[0]]])  # 识别图片
-np.argmax(model.predict([[X_test[0]]]))
+# model.predict([[X_test[0]]])  # 识别图片
+# np.argmax(model.predict([[X_test[0]]]))
 
 for i in range(4):
     plt.subplot(1, 4, i + 1)
@@ -55,7 +55,7 @@ for i in range(4):
     plt.title(test_y[i])
 plt.show()
 
-model.predict(X_test[0:4])
+# model.predict(X_test[0:4])
 
 y_pred = np.argmax(model.predict(X_test[0:4]), axis=1)
 for i in range(4):
@@ -71,7 +71,7 @@ for i in range(4):
     plt.subplot(1, 4, i + 1)
     plt.axis("off")
     plt.imshow(test_x[num], cmap='gray')
-    y_pred = np.argmax(model.predict([[X_test[num]]]))
+    y_pred = np.argmax(model.predict(X_test[num], batch_size=32))
     title = "y=" + str(test_y[num]) + "\np_pred" + str(y_pred)
     plt.title(title)
 plt.show()
